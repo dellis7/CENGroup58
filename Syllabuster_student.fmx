@@ -1,0 +1,69 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 650
+  ClientWidth = 565
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    AutoSize = True
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 128.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 313.000000000000000000
+    Size.Height = 67.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 50.000000000000000000
+    Text = 'SYLLABUSTER'
+    TabOrder = 0
+  end
+  object Button1: TButton
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 24.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 217.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Suggest Syllabus Topics'
+    TextSettings.Font.Size = 15.000000000000000000
+  end
+  object Button2: TButton
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 136.000000000000000000
+    Position.Y = 480.000000000000000000
+    Size.Width = 289.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Log Out'
+    TextSettings.Font.Size = 15.000000000000000000
+  end
+  object Label2: TLabel
+    AutoSize = True
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 360.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 20.000000000000000000
+    Text = 'Welcome Student!'
+    TabOrder = 4
+  end
+  object Button3: TButton
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 312.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 217.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'View Final Syllabus'
+    TextSettings.Font.Size = 15.000000000000000000
+    OnClick = Button3Click
+  end
+end
