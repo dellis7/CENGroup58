@@ -59,8 +59,6 @@ vector<string> rankFunc(vector<string> csvVec, vector<string> fileVec) { //retur
                 else {
                     rankmap.emplace(obj, 1);
                 }
-            }else{
-                rankmap.emplace(obj, 0);
             }
         }
     }
