@@ -10,7 +10,7 @@ using namespace std;
 
 #include "SignIn.h"
 #include "SignUp.h"
-
+#include "Dashboard.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -25,6 +25,9 @@ void __fastcall TSignInForm::signUpLinkClick(TObject *Sender)
 {
 	// TODO Implement closing previous form when another form is opened
 	this->Hide();
+	Hide();
+	emailEdit->Text = "";
+	passwordEdit->Text = "";
 	SignUpForm->Show();
 }
 //---------------------------------------------------------------------------
@@ -50,6 +53,10 @@ void __fastcall TSignInForm::signInButtonClick(TObject *Sender)
 
 				if (strcmp(password, toCharPtr(passwordEdit->Text))==0) {
 					loginSuccess = true;
+					Hide();
+					emailEdit->Text = "";
+					passwordEdit->Text = "";
+					DashboardForm->Show();
 				}
 				else {
 					// TODO Implement opening the respective  GUI based on the user type

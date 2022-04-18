@@ -21,22 +21,28 @@ object FinalSyllabusForm: TFinalSyllabusForm
     TabOrder = 0
   end
   object backToDashboardButton: TButton
+    StyledSettings = [Style, FontColor]
     Position.X = 216.000000000000000000
     Position.Y = 392.000000000000000000
     Size.Width = 257.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 1
+    TabOrder = 2
     Text = 'Go back to the dashboard'
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Size = 15.000000000000000000
     OnClick = backToDashboardButtonClick
   end
   object greeting: TLabel
-    Position.X = 519.000000000000000000
+    StyledSettings = [FontColor]
+    Position.X = 520.000000000000000000
     Position.Y = 8.000000000000000000
-    Size.Width = 121.000000000000000000
+    Size.Width = 113.000000000000000000
     Size.Height = 33.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Size = 20.000000000000000000
     Text = 'Hi, Student!'
-    TabOrder = 2
+    TabOrder = 1
   end
 end

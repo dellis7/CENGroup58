@@ -20,8 +20,14 @@ __fastcall TSignUpForm::TSignUpForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TSignUpForm::signInLinkClick(TObject *Sender)
 {
-	// TODO Implement closing previous form when another form is opened
-	this->CloseModal();
+	// Resetting the registration form
+	this->Hide();
+	usernameEdit->Text = "";
+	emailEdit->Text = "";
+	newPasswordEdit->Text = "";
+	confirmPasswordEdit->Text = "";
+	studentRadio->IsChecked = false;
+	teacherRadio->IsChecked = false;
 	SignInForm->Show();
 }
 //---------------------------------------------------------------------------
@@ -51,16 +57,21 @@ void __fastcall TSignUpForm::signUpButtonClick(TObject *Sender)
 			if (isStudent) {
 				string student = "S";
 				userType =  student.c_str();
+				DashboardForm->greeting->Text = "Hi, Student!";
+				DashboardForm->resInputButton->Text = "Suggest syllabus topics";	
 			}
 			else {
 				string teacher = "T";
 				userType =  teacher.c_str();
-            }
+				DashboardForm->greeting->Text = "Hi, Teacher!";
+				DashboardForm->resInputButton->Text = "Enter current syllabus topics";
+			}
 
-			database << nname << "," << nemail << "," << nPassword << "," << userType << "\n";
+			database << nname << "," << nemail << "," << nPassword << "," << userType;
 			database.close();
 
 			// Resetting the registration form
+			// TODO Remove duplicate code
 			this->Hide();
 			usernameEdit->Text = "";
 			emailEdit->Text = "";
