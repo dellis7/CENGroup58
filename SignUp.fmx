@@ -1,0 +1,117 @@
+object SignUpForm: TSignUpForm
+  Left = 0
+  Top = 0
+  Caption = 'Create an account'
+  ClientHeight = 495
+  ClientWidth = 662
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object usernameEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Position.X = 113.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 504.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object usernameLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 90.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Full Name:'
+    TabOrder = 7
+  end
+  object emailEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 113.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 504.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object emailLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 90.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'UFL email address'
+    TabOrder = 5
+  end
+  object newPasswordEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 113.000000000000000000
+    Position.Y = 232.000000000000000000
+    Size.Width = 504.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object newPasswordLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 90.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'New password'
+    TabOrder = 3
+  end
+  object confirmPasswordEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 113.000000000000000000
+    Position.Y = 320.000000000000000000
+    Size.Width = 504.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object confirmPasswordLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 336.000000000000000000
+    Size.Width = 90.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Confirm Password'
+    TabOrder = 1
+  end
+  object signUpButton: TButton
+    Position.X = 240.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Create account!'
+    OnClick = signUpButtonClick
+  end
+  object signInLink: TLabel
+    HitTest = True
+    Position.X = 256.000000000000000000
+    Position.Y = 449.000000000000000000
+    Size.Width = 473.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Already have an account? Sign In!'
+    TabOrder = 9
+    OnClick = signInLinkClick
+  end
+  object passwordsMismatchErr: TLabel
+    StyledSettings = [Family, Size, Style]
+    Position.X = 112.000000000000000000
+    Position.Y = 304.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claRed
+    Text = '*The passwords do not match!'
+    Visible = False
+    TabOrder = 10
+  end
+end
