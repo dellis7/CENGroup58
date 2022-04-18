@@ -75,3 +75,4 @@ void __fastcall TSignUpForm::signUpButtonClick(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+

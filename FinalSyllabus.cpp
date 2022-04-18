@@ -27,3 +27,4 @@ void __fastcall TFinalSyllabusForm::backToDashboardButtonClick(TObject *Sender)
 	DashboardForm->Show();
 }
 //---------------------------------------------------------------------------
+

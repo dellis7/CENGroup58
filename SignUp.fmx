@@ -19,11 +19,13 @@ object SignUpForm: TSignUpForm
     Size.PlatformDefault = False
   end
   object usernameLabel: TLabel
+    StyledSettings = [Size, Style, FontColor]
     Position.X = 24.000000000000000000
     Position.Y = 48.000000000000000000
     Size.Width = 90.000000000000000000
     Size.Height = 20.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Bahnschrift'
     Text = 'Full Name:'
     TabOrder = 7
   end
@@ -37,12 +39,14 @@ object SignUpForm: TSignUpForm
     Size.PlatformDefault = False
   end
   object emailLabel: TLabel
+    StyledSettings = [Size, Style, FontColor]
     Position.X = 24.000000000000000000
     Position.Y = 136.000000000000000000
     Size.Width = 90.000000000000000000
     Size.Height = 20.000000000000000000
     Size.PlatformDefault = False
-    Text = 'UFL email address'
+    TextSettings.Font.Family = 'Bahnschrift'
+    Text = 'UFL email:'
     TabOrder = 5
   end
   object newPasswordEdit: TEdit
@@ -55,11 +59,13 @@ object SignUpForm: TSignUpForm
     Size.PlatformDefault = False
   end
   object newPasswordLabel: TLabel
+    StyledSettings = [Size, Style, FontColor]
     Position.X = 24.000000000000000000
     Position.Y = 264.000000000000000000
     Size.Width = 90.000000000000000000
     Size.Height = 20.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Bahnschrift'
     Text = 'New password'
     TabOrder = 3
   end
@@ -73,15 +79,18 @@ object SignUpForm: TSignUpForm
     Size.PlatformDefault = False
   end
   object confirmPasswordLabel: TLabel
-    Position.X = 24.000000000000000000
+    StyledSettings = [Size, Style, FontColor]
+    Position.X = 8.000000000000000000
     Position.Y = 352.000000000000000000
-    Size.Width = 90.000000000000000000
+    Size.Width = 161.000000000000000000
     Size.Height = 20.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Bahnschrift'
     Text = 'Confirm Password'
     TabOrder = 1
   end
   object signUpButton: TButton
+    StyledSettings = [Style, FontColor]
     Position.X = 240.000000000000000000
     Position.Y = 400.000000000000000000
     Size.Width = 233.000000000000000000
@@ -89,15 +98,19 @@ object SignUpForm: TSignUpForm
     Size.PlatformDefault = False
     TabOrder = 8
     Text = 'Create account!'
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Size = 15.000000000000000000
     OnClick = signUpButtonClick
   end
   object signInLink: TLabel
+    StyledSettings = [Size, Style, FontColor]
     HitTest = True
     Position.X = 256.000000000000000000
     Position.Y = 457.000000000000000000
     Size.Width = 473.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Bahnschrift'
     Text = 'Already have an account? Sign In!'
     TabOrder = 9
     OnClick = signInLinkClick
@@ -115,21 +128,39 @@ object SignUpForm: TSignUpForm
     TabOrder = 10
   end
   object studentRadio: TRadioButton
-    Position.X = 113.000000000000000000
+    StyledSettings = [Size, Style]
+    Position.X = 185.000000000000000000
     Position.Y = 192.000000000000000000
     Size.Width = 249.000000000000000000
-    Size.Height = 33.000000000000000000
+    Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 11
     Text = 'Student'
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.FontColor = claBlue
   end
   object teacherRadio: TRadioButton
-    Position.X = 328.000000000000000000
-    Position.Y = 200.000000000000000000
+    StyledSettings = [Size, Style]
+    Position.X = 320.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Text = 'Teacher'
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.FontColor = claOrangered
+  end
+  object RadioButton1: TRadioButton
+    StyledSettings = [Size, Style]
+    Position.X = 456.000000000000000000
+    Position.Y = 192.000000000000000000
     Size.Width = 177.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 12
-    Text = 'Teacher'
+    Text = 'Parent'
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.FontColor = claDarkgreen
   end
 end
