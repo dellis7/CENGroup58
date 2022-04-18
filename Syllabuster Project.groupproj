@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AA31F928-B19E-4574-8BAE-AF293B9E651F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Syllabuster.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Syllabuster">
+        <MSBuild Projects="Syllabuster.cbproj"/>
+    </Target>
+    <Target Name="Syllabuster:Clean">
+        <MSBuild Projects="Syllabuster.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Syllabuster:Make">
+        <MSBuild Projects="Syllabuster.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Syllabuster"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Syllabuster:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Syllabuster:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

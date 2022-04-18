@@ -1,0 +1,42 @@
+object FinalSyllabusForm: TFinalSyllabusForm
+  Left = 0
+  Top = 0
+  Caption = 'Final syllabus'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object topicsList: TListView
+    ItemAppearanceClassName = 'TListItemAppearance'
+    ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Position.X = 104.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 433.000000000000000000
+    Size.Height = 281.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object backToDashboardButton: TButton
+    Position.X = 216.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 257.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Go back to the dashboard'
+    OnClick = backToDashboardButtonClick
+  end
+  object greeting: TLabel
+    Position.X = 519.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Hi, Student!'
+    TabOrder = 2
+  end
+end

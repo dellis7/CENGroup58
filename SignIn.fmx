@@ -1,0 +1,80 @@
+object SignInForm: TSignInForm
+  Left = 0
+  Top = 0
+  Caption = 'Sign In to your account'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object emailEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 121.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 465.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object emailLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'UFL email address:'
+    TabOrder = 3
+  end
+  object passwordEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 121.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 465.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object passwordLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Password:'
+    TabOrder = 1
+  end
+  object signInButton: TButton
+    Position.X = 216.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 193.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Sign In!'
+    OnClick = signInButtonClick
+  end
+  object signUpLink: TLabel
+    HitTest = True
+    Position.X = 208.000000000000000000
+    Position.Y = 376.000000000000000000
+    Size.Width = 393.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Don'#39't have an account? Sign Up!'
+    TabOrder = 5
+    OnClick = signUpLinkClick
+  end
+  object loginError: TLabel
+    StyledSettings = [Family, Size, Style]
+    Position.X = 120.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 465.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claRed
+    Text = 'Wrong email or password! Please try again'
+    Visible = False
+    TabOrder = 6
+  end
+end
