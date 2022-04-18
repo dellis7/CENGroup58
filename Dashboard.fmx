@@ -9,51 +9,71 @@ object DashboardForm: TDashboardForm
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
   object welcomeMSG: TLabel
-    Position.X = 232.000000000000000000
-    Position.Y = 96.000000000000000000
-    Size.Width = 353.000000000000000000
+    AutoSize = True
+    StyledSettings = []
+    Position.X = 136.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 377.000000000000000000
     Size.Height = 41.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Size = 34.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.FontColor = claDarkgreen
     Text = 'Welcome to Syllabuster!'
     TabOrder = 0
   end
   object greeting: TLabel
-    Position.X = 496.000000000000000000
-    Position.Y = 24.000000000000000000
-    Size.Width = 129.000000000000000000
+    StyledSettings = [FontColor]
+    Position.X = 520.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 113.000000000000000000
     Size.Height = 33.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Size = 20.000000000000000000
     Text = 'Hi, Student!'
     TabOrder = 1
   end
   object resInputButton: TButton
-    Position.X = 32.000000000000000000
+    StyledSettings = []
+    Position.X = 376.000000000000000000
     Position.Y = 184.000000000000000000
-    Size.Width = 201.000000000000000000
-    Size.Height = 97.000000000000000000
+    Size.Width = 209.000000000000000000
+    Size.Height = 105.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     Text = 'Suggest syllabus topics'
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.FontColor = claBlue
     OnClick = resInputButtonClick
   end
   object viewSyllabusButton: TButton
-    Position.X = 392.000000000000000000
-    Position.Y = 176.000000000000000000
+    StyledSettings = []
+    Position.X = 48.000000000000000000
+    Position.Y = 184.000000000000000000
     Size.Width = 209.000000000000000000
     Size.Height = 105.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
     Text = 'View final syllabus'
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.FontColor = claOrangered
     OnClick = viewSyllabusButtonClick
   end
   object signOutButton: TButton
-    Position.X = 208.000000000000000000
+    StyledSettings = [FontColor]
+    Position.X = 216.000000000000000000
     Position.Y = 368.000000000000000000
     Size.Width = 193.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
     Text = 'Sign Out'
+    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Size = 16.000000000000000000
     OnClick = signOutButtonClick
   end
 end
