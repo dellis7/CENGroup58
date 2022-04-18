@@ -80,11 +80,8 @@ vector<string> csvParse(string filename) {
                 if (line.at(i) == ',') {
                     temp = line.substr(lastEntry, i - lastEntry);
                     lastEntry = i;
-                    result.push_back(temp);
                 }
-                else if (i == line.size() - 1) {
-                    result.push_back(temp);
-                }
+                result.push_back(temp);
             }
         }
         MyFile.close();
@@ -95,69 +92,45 @@ vector<string> csvParse(string filename) {
     return result;
 }
 
-vector<string> rankObj(vector<string> csvVec, vector<string> fileVec) { //returns the filevec in order
-    map<string, int> rankmap;
-    for (string obj : fileVec) { //puts every objective in the map
-        rankmap.emplace(obj, 0);
-    }
+vector<string> rank(vector<string> csvVec, vector<string> fileVec) { //returns the filevec in order
+    map<string, int> rankmap = new map<string, int>;
     for (string obj : fileVec) {
         for (string s : csvVec) {
-            if (obj.find(s) != string::npos) { //checking if the input string is in the course objective
-                if (rankmap.find(obj)->second != 0) { //checking if that objective has been marked
-                    int temp = rankmap.find(obj)->second;//increases the objectives rank
-                    rankmap.erase(obj);
+            if (obj.find(s) != string::npos) {
+                if (rankmap.find(obj) != rankmap.end) {
+                    int temp = rankmap.find(obj);
                     rankmap.emplace(obj, temp + 1);
                 }
                 else {
-                    rankmap.erase(obj);
-                    rankmap.emplace(obj, 1); //marks objective as used
+                    rankmap.emplace(obj, 1);
                 }
             }
         }
     }
-    vector<string> result;
-    while (!rankmap.empty()) {
-        string max;
-        int maxInt = -1;
-        for (auto iter = rankmap.begin(); iter != rankmap.end(); iter++) {
-            if (iter->second > maxInt) {
-                max = iter->first;
-                maxInt = iter->second;
-            }
-        }
-        result.push_back(max);
-        rankmap.erase(max);
-    }
-    return result;
+    vector<string> result
 }
 
 int main() { //this will take in the parameters from the gui and generate the output
-
-    //these varibles will be taken in via the gui
-    //    |
-    //    |
-    //    V
-
     bool toFile = true; //default values until the gui is implemented
     string csvfileName = "test1.txt";
     string objfileName = "test2.txt";
 
-    vector<string> rankedObj = rankObj(fileParse(csvfileName), fileParse(objfileName));
+    //add method to get the gui input here!!!
+
+    vector<string> rankedObj = rank(csvParse(csvfileName), fileParse(objfileName));
 
     if (toFile) {
         ofstream MyFile("output.txt");
 
         for (string s : rankedObj) {
-            MyFile << s << endl;
+            MyFile << s;
         }
 
         MyFile.close();
     }
-
+    
     //output to gui here
-
-    return 0;
-
+    
 }
 
 //test1.txt
@@ -165,16 +138,9 @@ int main() { //this will take in the parameters from the gui and generate the ou
 //test
 //test
 //nothing
-//another objective
 //haha also nothing
 
 //test2.txt
 //test
 //other objectives
 //even more objectives
-
-//expected output:
-//test
-//another objectives
-//other objectives
-
