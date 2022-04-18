@@ -1,0 +1,4 @@
+dw,ew,dw,S
+a,a,a,T
+,,,T
+fdw,fewq,fdw,S
