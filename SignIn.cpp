@@ -10,7 +10,7 @@ using namespace std;
 
 #include "SignIn.h"
 #include "SignUp.h"
-
+#include "Dashboard.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -25,6 +25,9 @@ void __fastcall TSignInForm::signUpLinkClick(TObject *Sender)
 {
 	// TODO Implement closing previous form when another form is opened
 	this->Hide();
+	Hide();
+	emailEdit->Text = "";
+	passwordEdit->Text = "";
 	SignUpForm->Show();
 }
 //---------------------------------------------------------------------------
@@ -35,7 +38,7 @@ const char* toCharPtr(AnsiString str) {
 void __fastcall TSignInForm::signInButtonClick(TObject *Sender)
 {
 	fstream database;
-	database.open("registeredUsersDB.txt", ios::in);
+	database.open("registeredUsersDB.csv", ios::in);
 
 	if (database.is_open()) {
 		string dataline;
@@ -50,18 +53,25 @@ void __fastcall TSignInForm::signInButtonClick(TObject *Sender)
 
 				if (strcmp(password, toCharPtr(passwordEdit->Text))==0) {
 					loginSuccess = true;
+					Hide();
+					emailEdit->Text = "";
+					passwordEdit->Text = "";
+					const char* nname = parsedDataline.at(0).c_str();
+					DashboardForm->setUserName(nname);
+					DashboardForm->setEmail(email);
+					DashboardForm->setUserType(parsedDataline.at(3));
+					DashboardForm->greeting->Text = nname;
+					DashboardForm->Show();
 				}
 				else {
 					// TODO Implement opening the respective  GUI based on the user type
-					loginError->Visible = false;
-					loginSuccess = true;
+					loginError->Visible = true;
+					loginSuccess = false;
 				}
 			}
 		}
 
-		if (!loginSuccess) {
-			loginError->Visible = true;
-		}
+		loginError->Visible = !loginSuccess;
 
 		database.close();
 	}
@@ -81,4 +91,3 @@ vector<string> TSignInForm::parseDataline(string dataline)
 	return res;
 }
 //---------------------------------------------------------------------------
-

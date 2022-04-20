@@ -18,7 +18,7 @@ object SignInForm: TSignInForm
     Size.PlatformDefault = False
   end
   object emailLabel: TLabel
-    StyledSettings = [Style, FontColor]
+    StyledSettings = [Style]
     Position.X = 24.000000000000000000
     Position.Y = 88.000000000000000000
     Size.Width = 129.000000000000000000
@@ -26,6 +26,7 @@ object SignInForm: TSignInForm
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.FontColor = claPurple
     Text = 'UFL email:'
     TabOrder = 3
   end
@@ -39,7 +40,7 @@ object SignInForm: TSignInForm
     Size.PlatformDefault = False
   end
   object passwordLabel: TLabel
-    StyledSettings = [Style, FontColor]
+    StyledSettings = [Style]
     Position.X = 24.000000000000000000
     Position.Y = 192.000000000000000000
     Size.Width = 89.000000000000000000
@@ -47,6 +48,7 @@ object SignInForm: TSignInForm
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.FontColor = claPurple
     Text = 'Password:'
     TabOrder = 1
   end
@@ -61,11 +63,11 @@ object SignInForm: TSignInForm
     Text = 'Sign In!'
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 25.000000000000000000
-    TextSettings.FontColor = claBlue
+    TextSettings.FontColor = claPurple
     OnClick = signInButtonClick
   end
   object signUpLink: TLabel
-    StyledSettings = [Size, Style]
+    StyledSettings = [Size]
     HitTest = True
     Position.X = 224.000000000000000000
     Position.Y = 376.000000000000000000
@@ -73,7 +75,7 @@ object SignInForm: TSignInForm
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Bahnschrift'
-    TextSettings.FontColor = claOrangered
+    TextSettings.FontColor = claRed
     Text = 'Don'#39't have an account? Sign Up!'
     TabOrder = 5
     OnClick = signUpLinkClick

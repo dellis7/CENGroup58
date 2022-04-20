@@ -9,7 +9,7 @@ object StudentsSurvey: TStudentsSurvey
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
   object inputLabel: TLabel
-    StyledSettings = [Style, FontColor]
+    StyledSettings = [Style]
     Position.X = 32.000000000000000000
     Position.Y = 40.000000000000000000
     Size.Width = 329.000000000000000000
@@ -17,11 +17,12 @@ object StudentsSurvey: TStudentsSurvey
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 15.000000000000000000
+    TextSettings.FontColor = claPurple
     Text = 'Please type in a course topic, and click add: '
     TabOrder = 0
     object topicEdit: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
-      TabOrder = 4
+      TabOrder = 3
       Position.Y = 40.000000000000000000
       Size.Width = 385.000000000000000000
       Size.Height = 49.000000000000000000
@@ -39,11 +40,11 @@ object StudentsSurvey: TStudentsSurvey
     Text = 'Add'
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 16.000000000000000000
-    TextSettings.FontColor = claBlue
+    TextSettings.FontColor = claPurple
     OnClick = addButtonClick
   end
   object savedTopicsLabel: TLabel
-    StyledSettings = [Style, FontColor]
+    StyledSettings = [Style]
     Position.X = 32.000000000000000000
     Position.Y = 160.000000000000000000
     Size.Width = 385.000000000000000000
@@ -51,6 +52,7 @@ object StudentsSurvey: TStudentsSurvey
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 15.000000000000000000
+    TextSettings.FontColor = claPurple
     Text = 'Click on a topic to delete it'
     TabOrder = 3
   end
@@ -65,7 +67,6 @@ object StudentsSurvey: TStudentsSurvey
     DefaultItemStyles.ItemStyle = ''
     DefaultItemStyles.GroupHeaderStyle = ''
     DefaultItemStyles.GroupFooterStyle = ''
-    OnItemClick = savedTopicsListItemClick
     Viewport.Width = 381.000000000000000000
     Viewport.Height = 204.000000000000000000
   end
@@ -80,11 +81,11 @@ object StudentsSurvey: TStudentsSurvey
     Text = 'Submit'
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 16.000000000000000000
-    TextSettings.FontColor = claOrangered
+    TextSettings.FontColor = claPurple
     OnClick = submitButtonClick
   end
   object backToMainButton: TButton
-    StyledSettings = [Style, FontColor]
+    StyledSettings = [Style]
     Position.X = 184.000000000000000000
     Position.Y = 424.000000000000000000
     Size.Width = 257.000000000000000000
@@ -94,6 +95,7 @@ object StudentsSurvey: TStudentsSurvey
     Text = 'Go back to Dashboard'
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.FontColor = claPurple
     OnClick = backToMainButtonClick
   end
   object inputErrLabel: TLabel
