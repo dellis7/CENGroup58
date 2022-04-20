@@ -27,7 +27,6 @@ __published:	// IDE-managed Components
 	TLabel *passwordsMismatchErr;
 	TRadioButton *studentRadio;
 	TRadioButton *teacherRadio;
-	TRadioButton *RadioButton1;
 	void __fastcall signInLinkClick(TObject *Sender);
 	void __fastcall signUpButtonClick(TObject *Sender);
 private:	// User declarations

@@ -19,52 +19,53 @@ object DashboardForm: TDashboardForm
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 34.000000000000000000
     TextSettings.Font.StyleExt = {00070000000000000004000000}
-    TextSettings.FontColor = claDarkgreen
+    TextSettings.FontColor = claPurple
     Text = 'Welcome to Syllabuster!'
     TabOrder = 0
   end
   object greeting: TLabel
-    StyledSettings = [FontColor]
-    Position.X = 520.000000000000000000
-    Position.Y = 8.000000000000000000
+    StyledSettings = []
+    Position.X = 527.000000000000000000
     Size.Width = 113.000000000000000000
-    Size.Height = 33.000000000000000000
+    Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 20.000000000000000000
-    Text = 'Hi, Student!'
+    TextSettings.FontColor = claPurple
+    Text = 'Student!'
     TabOrder = 1
   end
   object resInputButton: TButton
     StyledSettings = []
-    Position.X = 376.000000000000000000
+    Position.X = 64.000000000000000000
     Position.Y = 184.000000000000000000
     Size.Width = 209.000000000000000000
     Size.Height = 105.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     Text = 'Suggest syllabus topics'
-    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Family = 'Lucida Sans'
     TextSettings.Font.Size = 16.000000000000000000
-    TextSettings.FontColor = claBlue
+    TextSettings.FontColor = claPurple
+    TextSettings.FontColorForState.Focused = claWhite
     OnClick = resInputButtonClick
   end
   object viewSyllabusButton: TButton
     StyledSettings = []
-    Position.X = 48.000000000000000000
+    Position.X = 384.000000000000000000
     Position.Y = 184.000000000000000000
     Size.Width = 209.000000000000000000
     Size.Height = 105.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
     Text = 'View final syllabus'
-    TextSettings.Font.Family = 'Bahnschrift'
+    TextSettings.Font.Family = 'Lucida Sans'
     TextSettings.Font.Size = 16.000000000000000000
-    TextSettings.FontColor = claOrangered
+    TextSettings.FontColor = claPurple
     OnClick = viewSyllabusButtonClick
   end
   object signOutButton: TButton
-    StyledSettings = [FontColor]
+    StyledSettings = []
     Position.X = 216.000000000000000000
     Position.Y = 368.000000000000000000
     Size.Width = 193.000000000000000000
@@ -74,6 +75,18 @@ object DashboardForm: TDashboardForm
     Text = 'Sign Out'
     TextSettings.Font.Family = 'Bahnschrift'
     TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.FontColor = claPurple
     OnClick = signOutButtonClick
+  end
+  object syllabusOutputErr: TLabel
+    StyledSettings = [Family, Size, Style]
+    Position.X = 8.000000000000000000
+    Position.Y = 297.000000000000000000
+    Size.Width = 624.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claRed
+    Visible = False
+    TabOrder = 5
   end
 end

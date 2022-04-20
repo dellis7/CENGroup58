@@ -12,6 +12,10 @@
 #include <FMX.ListBox.hpp>
 #include <FMX.StdCtrls.hpp>
 #include <FMX.Types.hpp>
+
+#include <vector>
+#include <string>
+using namespace std;
 //---------------------------------------------------------------------------
 class TStudentsSurvey : public TForm
 {
@@ -25,11 +29,11 @@ __published:	// IDE-managed Components
 	TButton *backToMainButton;
 	TLabel *inputErrLabel;
 	void __fastcall addButtonClick(TObject *Sender);
-	void __fastcall savedTopicsListItemClick(TCustomListBox * const Sender, TListBoxItem * const Item);
 	void __fastcall submitButtonClick(TObject *Sender);
 	void __fastcall backToMainButtonClick(TObject *Sender);
 
 private:	// User declarations
+	vector<AnsiString> topicsInput;
 public:		// User declarations
 	__fastcall TStudentsSurvey(TComponent* Owner);
 };

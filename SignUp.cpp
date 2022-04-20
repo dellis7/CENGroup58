@@ -20,8 +20,14 @@ __fastcall TSignUpForm::TSignUpForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TSignUpForm::signInLinkClick(TObject *Sender)
 {
-	// TODO Implement closing previous form when another form is opened
-	this->CloseModal();
+	// Resetting the registration form
+	this->Hide();
+	usernameEdit->Text = "";
+	emailEdit->Text = "";
+	newPasswordEdit->Text = "";
+	confirmPasswordEdit->Text = "";
+	studentRadio->IsChecked = false;
+	teacherRadio->IsChecked = false;
 	SignInForm->Show();
 }
 //---------------------------------------------------------------------------
@@ -33,7 +39,7 @@ void __fastcall TSignUpForm::signUpButtonClick(TObject *Sender)
 	else {
 		passwordsMismatchErr->Visible=false;
 		fstream database;
-		database.open("registeredUsersDB.txt", ios::app);
+		database.open("registeredUsersDB.csv", ios::out | ios::app);
 
 		if (database.is_open()) {
 			AnsiString name = usernameEdit->Text;
@@ -41,7 +47,7 @@ void __fastcall TSignUpForm::signUpButtonClick(TObject *Sender)
 			AnsiString email = emailEdit->Text.c_str();
 			const char* nemail = email.c_str();
 			AnsiString password = newPasswordEdit->Text.c_str();
-			const char* nPassword = name.c_str();
+			const char* nPassword = password.c_str();
 			bool isStudent = studentRadio->IsChecked;
 			bool isTeacher = teacherRadio->IsChecked;
 
@@ -51,16 +57,25 @@ void __fastcall TSignUpForm::signUpButtonClick(TObject *Sender)
 			if (isStudent) {
 				string student = "S";
 				userType =  student.c_str();
+				DashboardForm->resInputButton->Text = "Suggest syllabus topics";
+				DashboardForm->setUserType(student);
 			}
 			else {
 				string teacher = "T";
 				userType =  teacher.c_str();
-            }
+				DashboardForm->resInputButton->Text = "Enter current syllabus topics";
+				DashboardForm->setUserType(teacher);
+			}
 
-			database << nname << "," << nemail << "," << nPassword << "," << userType << "\n";
+			database << nname << "," << nemail << "," << nPassword << "," << userType;
+            database << "\n";
 			database.close();
 
+			DashboardForm->setUserName(nname);
+			DashboardForm->setEmail(nemail);
+
 			// Resetting the registration form
+			// TODO Remove duplicate code
 			this->Hide();
 			usernameEdit->Text = "";
 			emailEdit->Text = "";
@@ -70,6 +85,7 @@ void __fastcall TSignUpForm::signUpButtonClick(TObject *Sender)
 			teacherRadio->IsChecked = false;
 
 			// Redirecting the user to the dashboard
+			DashboardForm->greeting->Text = name;
 			DashboardForm->Show();
 		}
 	}
